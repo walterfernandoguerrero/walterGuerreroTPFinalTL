@@ -8,7 +8,7 @@ import java.util.List;
 public interface IPedidoService {
     String crearPedido(Pedido pedido);
     List<Pedido> listarPedido();
-    Producto buscarPorId(Long id);
+    Pedido buscarPorId(Long id);
     String editarPedido(Long id, Pedido pedido);
     String eliminarPedido(Long id);
 }

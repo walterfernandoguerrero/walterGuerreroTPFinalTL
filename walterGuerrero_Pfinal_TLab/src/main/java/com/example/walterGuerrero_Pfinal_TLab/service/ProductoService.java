@@ -2,6 +2,7 @@ package com.example.walterGuerrero_Pfinal_TLab.service;
 
 import com.example.walterGuerrero_Pfinal_TLab.model.Producto;
 import com.example.walterGuerrero_Pfinal_TLab.repository.ProductoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -10,7 +11,8 @@ import java.util.List;
 @Service
 public  class ProductoService implements IProductoService {
 
-    private final ProductoRepository repo;
+    @Autowired
+    ProductoRepository repo;
 
     public ProductoService(ProductoRepository repo) {
         this.repo = repo;

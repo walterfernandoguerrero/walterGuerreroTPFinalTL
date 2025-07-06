@@ -17,7 +17,13 @@ public class Producto {
 
     private String nombre;
     private String descripcion;
+    private String url_imagen;
     private int precio;
     private int categoria;
     private int stock;
+
+    // Constructor por defecto (¡añadido para solucionar el error!)
+    public Producto() {
+    }
+    
 }

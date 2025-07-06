@@ -3,10 +3,7 @@ package com.example.walterGuerrero_Pfinal_TLab.controller;
 import com.example.walterGuerrero_Pfinal_TLab.model.Producto;
 import com.example.walterGuerrero_Pfinal_TLab.service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,4 +20,29 @@ public class productoController {
     public List<Producto> listarProductos() {
         return ps.listarProductos();
     }
+
+    @PostMapping("/nuevoProducto")
+    public String crearProducto(@RequestBody Producto prod){
+        return ps.crearProducto(prod);
+    }
+
+    //prueba de modificar
+    @PutMapping("/edit/{id}")
+    public String editarProducto(@PathVariable Long id, @RequestBody Producto prod){
+        return ps.editarProducto(id,prod);
+    }
+
+    @GetMapping("/buscar/{id}")
+    public Producto buscarProducto(@PathVariable Long id) {
+        return ps.buscarPorId(id);
+    }
+
+    @DeleteMapping("/eliminar/{id}")
+    public String eliminarProducto(@PathVariable Long id) {
+        return ps.eliminarProducto(id);
+    }
+
+
+
+
 }

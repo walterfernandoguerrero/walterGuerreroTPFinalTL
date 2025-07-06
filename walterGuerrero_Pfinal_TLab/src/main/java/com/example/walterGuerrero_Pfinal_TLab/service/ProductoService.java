@@ -20,7 +20,8 @@ public  class ProductoService implements IProductoService {
 
     @Override
     public String crearProducto(Producto producto) {
-        return "";
+        repo.save(producto);
+        return "Se creo nuevo producto";
     }
 
     @Override
@@ -30,16 +31,32 @@ public  class ProductoService implements IProductoService {
 
     @Override
     public Producto buscarPorId(Long id) {
-        return null;
+        return  repo.findById(id).orElse(null);
+
     }
 
     @Override
-    public String editarProducto(Long id, Producto producto) {
-        return "";
+    public String editarProducto(Long id, Producto prod) {
+        return repo.findById(id).map(p -> {
+            p.setNombre(prod.getNombre());
+            p.setDescripcion(prod.getDescripcion());
+            p.setUrl_imagen(prod.getUrl_imagen());
+            p.setPrecio(prod.getPrecio());
+            p.setCategoria(prod.getCategoria());
+            p.setStock(prod.getStock());
+            repo.save(p);
+            return "Producto actualizado correctamente";
+        }).orElse("Producto no encontrado");
+
     }
 
     @Override
     public String eliminarProducto(Long id) {
-        return "";
+        if(repo.existsById(id))
+            {
+                repo.deleteById(id);
+                return "se elimino producto";
+            }
+        return "no hay producto con ese id";
     }
 }

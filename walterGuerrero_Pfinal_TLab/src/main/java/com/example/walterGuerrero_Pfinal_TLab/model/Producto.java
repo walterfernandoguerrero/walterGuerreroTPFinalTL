@@ -30,55 +30,42 @@ public class Producto {
         return id;
     }
 
-
     public void setId(long id) {
         this.id = id;
     }
-
     public String getNombre() {
         return nombre;
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
     public String getDescripcion() {
         return descripcion;
     }
-
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-
     public String getUrl_imagen() {
         return url_imagen;
     }
-
     public void setUrl_imagen(String url_imagen) {
         this.url_imagen = url_imagen;
     }
-
     public int getPrecio() {
         return precio;
     }
-
     public void setPrecio(int precio) {
         this.precio = precio;
     }
-
     public int getCategoria() {
         return categoria;
     }
-
     public void setCategoria(int categoria) {
         this.categoria = categoria;
     }
-
     public int getStock() {
         return stock;
     }
-
     public void setStock(int stock) {
         this.stock = stock;
     }

@@ -42,7 +42,4 @@ public class productoController {
         return ps.eliminarProducto(id);
     }
 
-
-
-
 }

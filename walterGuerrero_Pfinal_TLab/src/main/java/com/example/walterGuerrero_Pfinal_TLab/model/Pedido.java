@@ -11,7 +11,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Getter
 @Setter
-//@Table(name = "pedidos")
+@Table(name = "pedidos")
 public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,6 +20,9 @@ public class Pedido {
     private String fecha;
     private String cliente;
     private int producto;
+    private int precio;
+    private int cantidad;
+    private int nropedido;
 //-----
     public Long getId() {
         return id;
@@ -44,5 +47,29 @@ public class Pedido {
     }
     public void setProducto(int producto) {
         this.producto = producto;
+    }
+
+    public int getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(int precio) {
+        this.precio = precio;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public int getNropedido() {
+        return nropedido;
+    }
+
+    public void setNropedido(int nropedido) {
+        this.nropedido = nropedido;
     }
 }

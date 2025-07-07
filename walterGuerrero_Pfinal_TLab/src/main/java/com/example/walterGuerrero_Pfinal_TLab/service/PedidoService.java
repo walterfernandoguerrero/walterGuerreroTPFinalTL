@@ -47,6 +47,9 @@ public class PedidoService implements IPedidoService{
             ped.setFecha(pedido.getFecha());
             ped.setNombreCliente(pedido.getNombreCliente());
             ped.setProducto(pedido.getProducto());
+            ped.setPrecio(pedido.getPrecio());
+            ped.setCantidad(pedido.getCantidad());
+            ped.setNropedido(pedido.getNropedido());
             repo.save(ped);
             return "se modifico Pedido";
         }).orElse("pedido existe id de pedido");

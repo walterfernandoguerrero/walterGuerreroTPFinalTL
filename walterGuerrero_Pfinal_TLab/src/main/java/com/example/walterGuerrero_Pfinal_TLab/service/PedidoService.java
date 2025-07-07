@@ -1,9 +1,9 @@
 package com.example.walterGuerrero_Pfinal_TLab.service;
 
 import com.example.walterGuerrero_Pfinal_TLab.model.Pedido;
-import com.example.walterGuerrero_Pfinal_TLab.model.Producto;
 import com.example.walterGuerrero_Pfinal_TLab.repository.PedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -34,6 +34,11 @@ public class PedidoService implements IPedidoService{
     @Override
     public List<Pedido> listarPedido() {
         return repo.findAll();
+    }
+
+    @Override
+    public List<Pedido> filtrarPedido(int nropedido) {
+        return repo.findByNropedido(nropedido);
     }
 
     @Override

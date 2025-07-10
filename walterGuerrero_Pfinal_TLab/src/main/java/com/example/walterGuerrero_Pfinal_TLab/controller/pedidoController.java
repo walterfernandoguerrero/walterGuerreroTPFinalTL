@@ -23,6 +23,11 @@ public class pedidoController {
         return pedServ.crearPedido(ped);
     }
 
+    @PostMapping("/batchPedidos")
+    public List<Pedido> crearProductos(@RequestBody List<Pedido>pedidos){
+        return pedServ.crearPedidos(pedidos);
+    }
+
     @GetMapping("/listar")
     public List<Pedido> listarPedidos(){
         return pedServ.listarPedido();

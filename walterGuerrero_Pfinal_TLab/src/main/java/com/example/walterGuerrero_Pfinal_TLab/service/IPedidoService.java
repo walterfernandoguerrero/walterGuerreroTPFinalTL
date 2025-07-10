@@ -13,4 +13,5 @@ public interface IPedidoService {
     Pedido buscarPorId(Long id);
     String editarPedido(Long id, Pedido pedido);
     String eliminarPedido(Long id);
+    List<Pedido>crearPedidos(List<Pedido>pedidos);
 }

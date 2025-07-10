@@ -25,6 +25,13 @@ public class productoController {
     public String crearProducto(@RequestBody Producto prod){
         return ps.crearProducto(prod);
     }
+    //crear Varios Productos
+    @PostMapping("/batch")
+    public List<Producto>crearProductos(@RequestBody List<Producto> productos){
+        return ps.crearProductos(productos);
+    }
+
+
 
     //prueba de modificar
     @PutMapping("/edit/{id}")

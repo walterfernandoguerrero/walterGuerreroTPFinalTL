@@ -68,4 +68,9 @@ public class PedidoService implements IPedidoService{
         }
         return "no hay pedido con ese id";
     }
+
+    @Override
+    public List<Pedido> crearPedidos(List<Pedido> pedidos) {
+        return repo.saveAll(pedidos);
+    }
 }

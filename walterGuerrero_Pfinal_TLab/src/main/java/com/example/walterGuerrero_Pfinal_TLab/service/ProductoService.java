@@ -59,4 +59,9 @@ public  class ProductoService implements IProductoService {
             }
         return "no hay producto con ese id";
     }
+
+    @Override
+    public List<Producto> crearProductos(List<Producto> productos) {
+        return repo.saveAll(productos);
+    }
 }

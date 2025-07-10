@@ -22,7 +22,7 @@ public class Pedido {
     private int producto;
     private int precio;
     private int cantidad;
-    private int nropedido;
+    private Long nropedido;
 //-----
     public Long getId() {
         return id;
@@ -65,11 +65,11 @@ public class Pedido {
         this.cantidad = cantidad;
     }
 
-    public int getNropedido() {
+    public Long getNropedido() {
         return nropedido;
     }
 
-    public void setNropedido(int nropedido) {
+    public void setNropedido(Long nropedido) {
         this.nropedido = nropedido;
     }
 }

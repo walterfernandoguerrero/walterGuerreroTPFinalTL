@@ -10,4 +10,5 @@ public interface IProductoService {
     Producto buscarPorId(Long id);
     String editarProducto(Long id, Producto producto);
     String eliminarProducto(Long id);
+    List<Producto> crearProductos(List<Producto> productos);
 }
